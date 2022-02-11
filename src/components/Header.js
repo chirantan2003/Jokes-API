@@ -8,13 +8,13 @@ export default function Header() {
       </h1>
 
       <ul className="nav_right">
-        <a href="#" className="nav_item">
+        <a href="/#" className="nav_item">
           <li className="nav_item">HOME</li>
         </a>
-        <a href="#" className="nav_item">
+        <a href="/#" className="nav_item">
           <li className="nav_item">DANK</li>
         </a>
-        <a href="#" className="nav_item">
+        <a href="/#" className="nav_item">
           <li className="nav_item">DAD</li>
         </a>
       </ul>
