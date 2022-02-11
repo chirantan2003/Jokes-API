@@ -35,13 +35,38 @@ export default function Content() {
       })
       .catch((error) => console.log(error));
   }
-
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   React.useEffect(() => {
     getJoke();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const [rotate, setRotate] = React.useState(0);
   const [faceCounter, setFaceCounter] = React.useState(true);
+
+  function clickHandlerContent() {
+    toggleShown();
+    if (isShown) {
+      getJoke();
+    }
+    // isShown && getJoke();
+  }
+
+  function clickHandlerImage() {
+    setRotate(1);
+    toggleShown();
+    if (isShown) {
+      getJoke();
+    }
+    // isShown && getJoke();
+  }
+
+  function onAnimationHandler() {
+    setRotate(0);
+    if (!isShown) {
+      setFaceCounter((preValue) => !preValue);
+    }
+  }
 
   return (
     <>
@@ -53,12 +78,13 @@ export default function Content() {
       <div className="content_outer">
         <div
           className="content"
-          onClick={() => {
-            toggleShown();
-            {
-              isShown && getJoke();
-            }
-          }}
+          onClick={clickHandlerContent}
+          // onClick={() => {
+          //   toggleShown();
+          //   {
+          //     isShown && getJoke();
+          //   }
+          //}}
         >
           <p id="joke">{line.joke}</p>
           {isShown && <p>{line.punchLine}</p>}
@@ -66,20 +92,23 @@ export default function Content() {
 
         <img
           src={faceCounter ? face1Url : face2Url}
+          alt="face"
           className="face"
-          onClick={() => {
-            setRotate(1);
-            toggleShown();
-            {
-              isShown && getJoke();
-            }
-          }}
-          onAnimationEnd={() => {
-            setRotate(0);
-            {
-              !isShown && setFaceCounter((preValue) => !preValue);
-            }
-          }}
+          onClick={clickHandlerImage}
+          // onClick={() => {
+          //   setRotate(1);
+          //   toggleShown();
+          //   {
+          //     isShown && getJoke();
+          //   }
+          // }}
+          // onAnimationEnd={() => {
+          //   setRotate(0);
+          //   {
+          //     !isShown && setFaceCounter((preValue) => !preValue);
+          //   }
+          // }}
+          onAnimationEnd={onAnimationHandler}
           rotate={rotate}
         />
       </div>
