@@ -1,0 +1,91 @@
+.container {
+  display: flex;
+  gap: 2rem;
+  padding: 1rem 3rem;
+  color: white;
+}
+
+.container h2 {
+  text-decoration: underline;
+  text-underline-offset: 0.5rem;
+  text-decoration-color: var(--green);
+  font-weight: 500;
+}
+
+.container h2:hover {
+  cursor: pointer;
+}
+
+.dull {
+  color: var(--green);
+  text-decoration: none !important;
+}
+
+.content_outer {
+  margin: auto;
+  justify-content: space-between;
+  max-width: max-content;
+  gap: 5rem;
+  /* border: 1px solid white; */
+  display: flex;
+  overflow: hidden;
+}
+
+.content {
+  background-color: var(--green);
+  margin: auto;
+  width: 40vw;
+  min-height: 15vh;
+  border-radius: 5px;
+  padding: 2rem;
+  font-weight: 600;
+}
+
+.content:hover {
+  cursor: pointer;
+}
+
+.face {
+  max-height: 40vh;
+  max-width: 15vw;
+}
+
+.face:hover {
+  cursor: pointer;
+}
+
+.face[rotate="1"] {
+  animation: rotate 1s;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* .button_align {
+  margin: auto;
+   border: 1px solid white; 
+  width: max-content;
+}
+
+button:hover {
+  box-shadow: 0 0.75rem 1rem 0 rgba(0, 255, 255, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+button {
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: Segoe UI;
+  border: none;
+  padding: 0.5rem 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition-duration: 0.2s;
+  border-radius: 30px;
+  background-color: rgb(0, 255, 255);
+  margin: 2rem;
+  align-self: center;
+} */
