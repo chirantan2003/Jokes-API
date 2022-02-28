@@ -79,12 +79,6 @@ export default function Content() {
         <div
           className="content"
           onClick={clickHandlerContent}
-          // onClick={() => {
-          //   toggleShown();
-          //   {
-          //     isShown && getJoke();
-          //   }
-          //}}
         >
           <p id="joke">{line.joke}</p>
           {isShown && <p>{line.punchLine}</p>}
@@ -95,28 +89,10 @@ export default function Content() {
           alt="face"
           className="face"
           onClick={clickHandlerImage}
-          // onClick={() => {
-          //   setRotate(1);
-          //   toggleShown();
-          //   {
-          //     isShown && getJoke();
-          //   }
-          // }}
-          // onAnimationEnd={() => {
-          //   setRotate(0);
-          //   {
-          //     !isShown && setFaceCounter((preValue) => !preValue);
-          //   }
-          // }}
           onAnimationEnd={onAnimationHandler}
           rotate={rotate}
         />
       </div>
-
-      {/* <div className="button_align">
-        <button onClick={toggleShown}>Show Punchline</button>
-        <button onClick={getJoke}>Get Random Joke</button>
-      </div> */}
     </>
   );
 }
